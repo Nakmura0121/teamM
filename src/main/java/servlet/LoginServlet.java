@@ -33,6 +33,8 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+request.getParameter("UTF-8");
+		
 		String mail = request.getParameter("mail");
 		String pw = request.getParameter("pw");
 		
@@ -58,12 +60,19 @@ public class LoginServlet extends HttpServlet {
 			String view = "./?error=1";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
+		//一致しなけければ管理者ログインできない
+		}else if(account.getMail().equals("root@mail")){
+			HttpSession session = request.getSession();
+			session.setAttribute("admin", account);
+			
+			String view = "WEB-INF/view/admin-menu.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);
 		} else {
-			// ログイン情報をセッションに登録
 			HttpSession session = request.getSession();
 			session.setAttribute("user", account);
-			
-			String view = "WEB-INF/view/ensyu-menu.jsp";
+			// ログイン情報をセッションに登録
+			String view = "WEB-INF/view/user-menu.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 		}

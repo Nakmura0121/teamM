@@ -13,7 +13,7 @@
 		<h3>「MorijyobiSystem」</h3>
 		
 	<ul>
-		<li><a href="LoginServlet" class="top" >ログインはこちら</a>
+		<li><a href="LoginForm" class="top" >ログインはこちら</a>
 		    <a href="UserForm" class="top" >新規登録はこちら</a>
 		</li>
 	</ul>	
