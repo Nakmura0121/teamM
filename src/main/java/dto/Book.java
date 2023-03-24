@@ -2,22 +2,22 @@ package dto;
 
 public class Book {
 	private int book_id;
-	private String name;
-	private String human;
+	private String book_name;
+	private String author;
 	private String publisher;
-	private String date;
 	private int isbn;
 	private String version;
+	private String date;
 	
-	public Book(int book_id, String name, String human, String publisher, String date, int isbn, String version) {
+	public Book(int book_id, String book_name, String author, String publisher, int isbn, String version, String date) {
 		super();
 		this.book_id = book_id;
-		this.name = name;
-		this.human = human;
+		this.book_name = book_name;
+		this.author = author;
 		this.publisher = publisher;
-		this.date = date;
 		this.isbn = isbn;
 		this.version = version;
+		this.date = date;
 	}
 
 	public int getBook_id() {
@@ -28,20 +28,20 @@ public class Book {
 		this.book_id = book_id;
 	}
 
-	public String getName() {
-		return name;
+	public String getBook_name() {
+		return book_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setBook_name(String book_name) {
+		this.book_name = book_name;
 	}
 
-	public String getHuman() {
-		return human;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setHuman(String human) {
-		this.human = human;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public String getPublisher() {
@@ -50,14 +50,6 @@ public class Book {
 
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
 	}
 
 	public int getIsbn() {
@@ -74,6 +66,14 @@ public class Book {
 
 	public void setVersion(String version) {
 		this.version = version;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
 	
