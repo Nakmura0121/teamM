@@ -1,31 +1,31 @@
 package dto;
 
 public class Book {
-	private int book_id;
+	private int id;
 	private String book_name;
 	private String author;
 	private String publisher;
 	private int isbn;
 	private String version;
-	private String date;
+	private String day;
 	
-	public Book(int book_id, String book_name, String author, String publisher, int isbn, String version, String date) {
+	public Book(int id, String book_name, String author, String publisher, int isbn, String version, String day) {
 		super();
-		this.book_id = book_id;
+		this.id = id;
 		this.book_name = book_name;
 		this.author = author;
 		this.publisher = publisher;
 		this.isbn = isbn;
 		this.version = version;
-		this.date = date;
+		this.day = day;
 	}
 
-	public int getBook_id() {
-		return book_id;
+	public int getId() {
+		return id;
 	}
 
-	public void setBook_id(int book_id) {
-		this.book_id = book_id;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getBook_name() {
@@ -68,13 +68,13 @@ public class Book {
 		this.version = version;
 	}
 
-	public String getDate() {
-		return date;
+	public String getDay() {
+		return day;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setDay(String day) {
+		this.day = day;
 	}
-	
-	
-}
+
+
+	}
