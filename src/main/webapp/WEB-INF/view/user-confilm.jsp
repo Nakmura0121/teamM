@@ -14,9 +14,9 @@
 	%>
 	名前：<%=account.getName() %><br>
 	メール：<%=account.getMail() %><br>
-	パスワード:<%=account.getPassword() %><br>
+	パスワード:****************<br>
 	
 	<a href="">OK</a><br>
-	<a href="">戻る</a>
+	<a href="UserForm">戻る</a>
 </body>
 </html>
