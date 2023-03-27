@@ -16,7 +16,7 @@
 	メール：<%=account.getMail() %><br>
 	パスワード:****************<br>
 	
-	<a href="">OK</a><br>
+	<a href="UserExecute">OK</a><br>
 	<a href="UserForm">戻る</a>
 </body>
 </html>
