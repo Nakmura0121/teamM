@@ -8,9 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import dto.Book;
 
 /**
  * Servlet implementation class BookRegisterServlet
@@ -31,7 +28,7 @@ public class BookRegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		/*HttpSession session = request.getSession();
 		Book teamlibrary = (Book)session.getAttribute("user");
 
 		if(teamlibrary == null){
@@ -39,7 +36,7 @@ public class BookRegisterServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 			return;
-		}
+		}*/
 		
 		String view = "WEB-INF/view/book-register.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);

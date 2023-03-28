@@ -8,21 +8,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import dto.Book;
 
 /**
- * Servlet implementation class BookRegisterConfirmServlet
+ * Servlet implementation class LeadingServlet
  */
-@WebServlet("/BookRegisterConfirmServlet")
-public class BookRegisterConfirmServlet extends HttpServlet {
+@WebServlet("/LeadingServlet")
+public class LeadingServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BookRegisterConfirmServlet() {
+    public LeadingServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,29 +28,10 @@ public class BookRegisterConfirmServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-		/*String id2 = request.getParameter("id");
-		int id = Integer.parseInt(id2); */
-		String book_name = request.getParameter("book_name");
-		String author = request.getParameter("author");
-		String publisher = request.getParameter("publisher");
-		String isbn2 = request.getParameter("isbn");
-		int isbn = Integer.parseInt(isbn2);
-		String version = request.getParameter("version");
-		String day = request.getParameter("day");
 		
-
-
-		Book teamlibrary = new Book(-1,book_name, author, publisher, isbn, version, day);
-		
-		HttpSession session = request.getSession();
-		
-
-		session.setAttribute("input_data", teamlibrary);
-		
-		String view = "WEB-INF/view/book-register-confirm.jsp";
+		String view = "WEB-INF/view/account-search.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		dispatcher.forward(request, response);	
+		dispatcher.forward(request, response);
 	}
 
 	/**
