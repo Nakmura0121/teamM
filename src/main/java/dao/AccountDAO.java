@@ -85,7 +85,7 @@ public class AccountDAO {
 	
 	// ログイン処理
 	public static Account login(String mail, String hashedPw) {
-		String sql = "SELECT * FROM teamaccount WHERE mail = ? AND password = ?";
+		String sql = "SELECT * FROM teamaccount WHERE mail = ? AND hashedpw = ?";
 		
 		try (
 				Connection con = getConnection();
@@ -97,8 +97,8 @@ public class AccountDAO {
 			try (ResultSet rs = pstmt.executeQuery()){
 				
 				if(rs.next()) {
-					int id = rs.getInt("id");
-					String name = rs.getString("name");
+					int id = rs.getInt("account_id");
+					String name = rs.getString("account_name");
 					String salt = rs.getString("salt");
 					String createdAt = rs.getString("created_at");
 					
