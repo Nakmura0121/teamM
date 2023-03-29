@@ -29,7 +29,7 @@ public class BookDAO {
 	}
 	//登録機能
 	public static int registerBook(Book book) {
-		String sql = "INSERT INTO teamlibrary VALUES(default, ?, ?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO teamlibrary2 VALUES(default, ?, ?, ?, ?, ?, ?)";
 		int result = 0;
 				
 		try (
@@ -59,7 +59,7 @@ public class BookDAO {
 
 		List<Book>result = new ArrayList<>();
 
-		String sql = "SELECT * FROM teamlibrary";
+		String sql = "SELECT * FROM teamlibrary2";
 		try (
 				Connection con = getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql);
@@ -86,7 +86,7 @@ public class BookDAO {
 	}
 	//削除機能
 	public static int deletelibrary(int id) {
-		String sql = "DELETE FROM teamlibrary WHERE id = ?";
+		String sql = "DELETE FROM teamlibrary2 WHERE id = ?";
 		int result = 0;
 		
 		try (
@@ -110,7 +110,7 @@ public class BookDAO {
 	//検索機能
 	public static List<Book> searchLibraly(String book_name){
 
-		String sql = "SELECT * FROM teamlibrary WHERE book_name LIKE ?";
+		String sql = "SELECT * FROM teamlibrary2 WHERE book_name LIKE ?";
 
 		List<Book> result = new ArrayList<>();
 

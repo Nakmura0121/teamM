@@ -8,6 +8,6 @@
 </head>
 <body>
 	<h3>登録に成功しました。</h3>
-	<a href="./">戻る</a>
+	<a href="BackServlet">戻る</a>
 </body>
 </html>

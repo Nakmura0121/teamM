@@ -16,7 +16,7 @@
 			       <a href="" >図書一覧</a>
 			  </li>
 			  <li>
-			       <a href="" >図書検索</a>
+			       <a href="BookSerchServlet" >図書検索</a>
 			       <a href="ListServlet" >貸出履歴</a>
 			  </li>
 			  <li>

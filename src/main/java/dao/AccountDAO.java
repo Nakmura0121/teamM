@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import dto.Account;
 import util.GenerateHashedPw;
@@ -113,6 +115,74 @@ public class AccountDAO {
 		return null;
 	}
 	
+	  public static List<Account> searchAccount(String name){
+			
+			String sql = "SELECT account_name,mail FROM teamaccount WHERE  account_name LIKE ?";
+			
+			List<Account> result = new ArrayList<>();
+					
+			
+			try (
+					Connection con = getConnection();
+					PreparedStatement pstmt = con.prepareStatement(sql);
+					){
+				
+				pstmt.setString(1, "%" + name + "%");
+				
+				try (ResultSet rs = pstmt.executeQuery()){
+					while(rs.next()) {
+						String name1=rs.getString("account_name");
+						String mail=rs.getString("mail");
+					
+						Account libraly= new Account(-1, name1, mail, null, null, null);
+						
+						result.add(libraly);
+					}
+				}	
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+			return result;
+
+	    }
+	
+	   public static Account selectAccount(String mail){
+			
+			// 実行するSQL
+			String sql = "SELECT * FROM teamaccount WHERE mail = ?";
+					
+			try (
+					Connection con = getConnection();	// DB接続
+					PreparedStatement pstmt = con.prepareStatement(sql);			// 構文解析
+					){
+				
+				pstmt.setString(1, mail);
+				
+				try (ResultSet rs = pstmt.executeQuery()){
+					
+					if(rs.next()) {
+						// id は引数で受け取っているのでgetしない
+						String name = rs.getString("account_name");
+						String mail2 = rs.getString("mail");
+
+					Account result = new Account(-1, name,mail2, null, null, null);
+						return result;
+					}
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (URISyntaxException e1) {
+				e1.printStackTrace();
+			}
+
+			// 途中でExceptionが発生した場合や取得結果が0件の場合はnullを返す。
+			return null;
+		}	
+		
 }
 
 
