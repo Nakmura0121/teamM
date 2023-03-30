@@ -13,7 +13,7 @@
 			<ul>
 			   <li>
 			       <a href="BookRegisterServlet" >図書登録</a>
-			       <a href="" >図書一覧</a>
+			       <a href="BookList" >図書一覧</a>
 			  </li>
 			  <li>
 			       <a href="BookSerchServlet" >図書検索</a>
@@ -26,7 +26,7 @@
 			</ul>
 			
 			<div class="logout" >
-			<a href="./" class="logout2"  >ログアウト</a>
+			<a href="LogoutServlet" class="logout2"  >ログアウト</a>
 			</div>
 </body>
 </html>
