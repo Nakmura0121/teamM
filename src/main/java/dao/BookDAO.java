@@ -66,7 +66,7 @@ public class BookDAO {
 				){
 			try (ResultSet book = pstmt.executeQuery()){
 				while(book.next()) {
-					int id = book.getInt("id");
+					int id = book.getInt("book_id");
 					String Book_name = book.getString("book_name");
 					String Author = book.getString("author");
 					String Publisher = book.getString("publisher");
@@ -124,7 +124,7 @@ public class BookDAO {
 
 			try (ResultSet rs = pstmt.executeQuery()){
 				while(rs.next()) {
-					int Id = rs.getInt("id");
+					int Id = rs.getInt("book_id");
 					String Book_name = rs.getString("book_name");
 					String Author = rs.getString("author");
 					String Publisher = rs.getString("publisher");
@@ -144,5 +144,5 @@ public class BookDAO {
 			e.printStackTrace();
 		}
 		return result;
-		}
+		} 
 }
